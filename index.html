@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomizer</title>
+</head>
+<body>
+
+    <h1>Welcome to the Randomizer</h1>
+    <p>Enter the list of things you want to be selected at random</p>
+
+    <div>
+        <label for="userList">Enter your list (comma separated):</label>
+        <input type="text" name="userList" id="userList" placeholder="Pizza, Sharwama, Burger">
+    </div>
+            <br><br>
+    
+    <div>
+        <!-- <button  type="button" id="nextItem">Next Item</button> -->
+    
+        <button  type="submit" id="randomizeBtn">Randomize</button>
+    </div>
+
+    <h2 id="resultDisplay"></h2>
+
+
+    <script>
+        //  document.getElementById("nextItem")
+        // .addEventListener("click", function(){
+        //     <button  type="button" id="nextItem">Next Item</button>
+
+    
+        // })
+
+
+        document.getElementById("randomizeBtn")
+        .addEventListener("click", function(){
+            const rawText = document.getElementById("userList").value;
+    
+            const itemsArray = rawText.split(",");
+            
+            // console.log(itemsArray);
+            // alert(itemsArray)
+
+            const randomIndex = Math.floor(Math.random() * itemsArray.length );
+            const winner = itemsArray[randomIndex];
+
+            document.getElementById("resultDisplay").innerText = "The winner is: " + winner;
+        })
+        
+        for(let i=10; i >= 20; i++){
+            alert(i);
+        }
+        
+
+
+    </script>
+
+    <script src="class.js"></script>
+
+</body>
+</body>
+</html>
